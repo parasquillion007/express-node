@@ -3,7 +3,7 @@ const httpRequestLog = require('./middleware/log');
 
 /* */
 const app = express();
-const port = 3010;
+const port = 8001;
 
 app.use(express.static('static'));
 
