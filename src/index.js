@@ -1,4 +1,5 @@
 const express = require('express');
+const httpRequestLog = require('./middleware/log');
 
 /* */
 const app = express();
@@ -6,8 +7,10 @@ const port = 3010;
 
 app.use(express.static('static'));
 
+app.use(httpRequestLog);
+
 app.get('/', (req, res) => {
-  res.status(200).send({ data: {} });
+  return res.status(200).send({ data: {} });
 });
 
 /* Start the express server */
